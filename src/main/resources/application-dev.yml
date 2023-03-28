@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:~/urlShortenerDatabase
+    url: jdbc:h2:file:~/wordlydb
     username:
     password:
     driver-class-name: org.h2.Driver
