@@ -22,7 +22,7 @@ public class LanguageService {
     public void addNewLanguage(AddLanguageRequest addLanguageRequest) {
         boolean doesLanguageExists = languageRepository.existsLanguageByLanguageCode(addLanguageRequest.languageCode());
 
-        if (!doesLanguageExists){
+        if (doesLanguageExists){
             log.error("Language with code: " + addLanguageRequest.languageCode() + " already exists");
             throw new RuntimeException("That language already exists");
         }
