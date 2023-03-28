@@ -1,6 +1,7 @@
 package com.example.wordlegamebackend.word.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
@@ -15,10 +16,10 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
+    @NotNull
     private String word;
-
     @ManyToOne
     @JoinColumn(name = "language_id")
+    @NotNull
     private Language language;
-
 }
