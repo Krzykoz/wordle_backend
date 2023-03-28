@@ -1,6 +1,7 @@
 package com.example.wordlegamebackend.word.service;
 
 import com.example.wordlegamebackend.word.exception.LanguageAlreadyExistsException;
+import com.example.wordlegamebackend.word.exception.LanguageNotFoundException;
 import com.example.wordlegamebackend.word.model.entity.Language;
 import com.example.wordlegamebackend.word.model.request.AddLanguageRequest;
 import com.example.wordlegamebackend.word.repository.LanguageRepository;
@@ -31,6 +32,11 @@ public class LanguageService {
                 .build();
 
         languageRepository.save(language);
+    }
+
+    public Language getLanguageByCode(String languageCode) {
+        return languageRepository.findLanguageByLanguageCode(languageCode)
+                .orElseThrow(() -> new LanguageNotFoundException("Language with code: " + languageCode + " not found"));
     }
 
 }
