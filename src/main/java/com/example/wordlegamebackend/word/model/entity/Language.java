@@ -4,21 +4,17 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "words")
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "langugages")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Word {
+public class Language {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String word;
-
-    @ManyToOne
-    @JoinColumn(name = "language_id")
-    private Language language;
-
+    private String language;
+    private String languageCode;
 }
