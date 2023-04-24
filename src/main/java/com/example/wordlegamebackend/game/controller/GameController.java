@@ -16,7 +16,7 @@ public class GameController {
     public GameController(GameService gameService) {
         this.gameService = gameService;
     }
-    //test
+
     @PostMapping
     public void add(@RequestBody Game game){
         gameService.addNewGame(game);
