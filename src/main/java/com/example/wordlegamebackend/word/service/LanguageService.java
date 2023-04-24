@@ -3,6 +3,7 @@ package com.example.wordlegamebackend.word.service;
 import com.example.wordlegamebackend.word.exception.LanguageAlreadyExistsException;
 import com.example.wordlegamebackend.word.exception.LanguageNotFoundException;
 import com.example.wordlegamebackend.word.model.entity.Language;
+import com.example.wordlegamebackend.word.model.entity.dto.WordDto;
 import com.example.wordlegamebackend.word.model.request.AddLanguageRequest;
 import com.example.wordlegamebackend.word.repository.LanguageRepository;
 import lombok.extern.log4j.Log4j2;
@@ -38,5 +39,7 @@ public class LanguageService {
         return languageRepository.findLanguageByLanguageCode(languageCode)
                 .orElseThrow(() -> new LanguageNotFoundException("Language with code: " + languageCode + " not found"));
     }
-
+    public void removeLanguageById(Long id) {
+        languageRepository.deleteById(id);
+    }
 }

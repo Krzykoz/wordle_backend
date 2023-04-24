@@ -2,10 +2,7 @@ package com.example.wordlegamebackend.word.controller;
 
 import com.example.wordlegamebackend.word.model.request.AddLanguageRequest;
 import com.example.wordlegamebackend.word.service.LanguageService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/language")
@@ -20,5 +17,10 @@ public class LanguageController {
     @PostMapping
     void addLanguage(@RequestBody AddLanguageRequest addLanguageRequest) {
         languageService.addNewLanguage(addLanguageRequest);
+    }
+
+    @DeleteMapping("{id}")
+    void removeLanguage(@PathVariable final Long id) {
+        languageService.removeLanguageById(id);
     }
 }
