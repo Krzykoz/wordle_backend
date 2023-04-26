@@ -1,10 +1,11 @@
-package com.piaskowy.urlshortenerbackend.user.service;
+package com.example.wordlegamebackend.user.service;
 
-import com.piaskowy.urlshortenerbackend.user.model.CustomUserDetails;
-import com.piaskowy.urlshortenerbackend.user.model.dto.UserDto;
-import com.piaskowy.urlshortenerbackend.user.model.entity.User;
-import com.piaskowy.urlshortenerbackend.user.model.mapper.UserModelMapper;
-import com.piaskowy.urlshortenerbackend.user.repository.UserRepository;
+
+import com.example.wordlegamebackend.user.model.CustomUserDetails;
+import com.example.wordlegamebackend.user.model.dto.UserDto;
+import com.example.wordlegamebackend.user.model.entity.User;
+import com.example.wordlegamebackend.user.model.mapper.UserModelMapper;
+import com.example.wordlegamebackend.user.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

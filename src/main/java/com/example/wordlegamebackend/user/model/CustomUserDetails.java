@@ -1,6 +1,6 @@
-package com.piaskowy.urlshortenerbackend.user.model;
+package com.example.wordlegamebackend.user.model;
 
-import com.piaskowy.urlshortenerbackend.user.model.entity.User;
+import com.example.wordlegamebackend.user.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -15,7 +15,7 @@ public record CustomUserDetails(User user) implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return null;
     }
 
     @Override
@@ -40,6 +40,6 @@ public record CustomUserDetails(User user) implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return user.isEnabled();
+        return true;
     }
 }

@@ -1,7 +1,7 @@
-package com.piaskowy.urlshortenerbackend.user.controller;
+package com.example.wordlegamebackend.user.controller;
 
-import com.piaskowy.urlshortenerbackend.user.model.dto.UserDto;
-import com.piaskowy.urlshortenerbackend.user.service.UserService;
+import com.example.wordlegamebackend.user.model.dto.UserDto;
+import com.example.wordlegamebackend.user.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

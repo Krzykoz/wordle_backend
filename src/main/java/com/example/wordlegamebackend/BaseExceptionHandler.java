@@ -1,6 +1,5 @@
-package com.piaskowy.urlshortenerbackend.global;
+package com.example.wordlegamebackend;
 
-import com.piaskowy.urlshortenerbackend.auth.model.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

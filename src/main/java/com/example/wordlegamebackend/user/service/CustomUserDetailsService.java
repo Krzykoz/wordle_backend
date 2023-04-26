@@ -1,7 +1,8 @@
-package com.piaskowy.urlshortenerbackend.user.service;
+package com.example.wordlegamebackend.user.service;
 
-import com.piaskowy.urlshortenerbackend.user.model.CustomUserDetails;
-import com.piaskowy.urlshortenerbackend.user.repository.UserRepository;
+
+import com.example.wordlegamebackend.user.model.CustomUserDetails;
+import com.example.wordlegamebackend.user.repository.UserRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,7 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .map(CustomUserDetails::new)
                 .orElseThrow(() -> {
                     log.error("User with email: " + email + " not found");
-                    throw new UsernameNotFoundException("User with email: " + email + " not found");
+                    return new UsernameNotFoundException("User with email: " + email + " not found");
                 });
     }
 }

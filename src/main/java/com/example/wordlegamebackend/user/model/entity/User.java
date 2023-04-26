@@ -1,11 +1,8 @@
-package com.piaskowy.urlshortenerbackend.user.model.entity;
+package com.example.wordlegamebackend.user.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.piaskowy.urlshortenerbackend.url.model.Url;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Builder
@@ -21,34 +18,29 @@ public class User {
     @NonNull
     private String email;
     @NonNull
-    @Setter
-    private String password;
+    private String firstName;
     @NonNull
-    private String name;
-    @NonNull
-    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "is_enabled")
-    private boolean isEnabled = false;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private List<Url> urls;
 
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         final User user = (User) o;
-        return id.equals(user.id)
-                && email.equals(user.email)
-                && password.equals(user.password)
-                && name.equals(user.name)
-                && lastName.equals(user.lastName);
+
+        if (!Objects.equals(id, user.id)) return false;
+        if (!email.equals(user.email)) return false;
+        if (!firstName.equals(user.firstName)) return false;
+        return lastName.equals(user.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, password, name, lastName);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + email.hashCode();
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        return result;
     }
 }

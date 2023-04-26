@@ -1,4 +1,4 @@
-package com.piaskowy.urlshortenerbackend.auth.model.response;
+package com.example.wordlegamebackend;
 
 import lombok.Builder;
 

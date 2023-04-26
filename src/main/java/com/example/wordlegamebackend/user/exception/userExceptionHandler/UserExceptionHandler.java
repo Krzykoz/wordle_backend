@@ -1,7 +1,7 @@
-package com.piaskowy.urlshortenerbackend.user.exception.userExceptionHandler;
+package com.example.wordlegamebackend.user.exception.userExceptionHandler;
 
-import com.piaskowy.urlshortenerbackend.global.BaseExceptionHandler;
-import com.piaskowy.urlshortenerbackend.user.exception.UserAlreadyExistsException;
+import com.example.wordlegamebackend.BaseExceptionHandler;
+import com.example.wordlegamebackend.user.exception.UserAlreadyExistsException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;

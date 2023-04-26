@@ -1,4 +1,4 @@
-package com.piaskowy.urlshortenerbackend.user.model.dto;
+package com.example.wordlegamebackend.user.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
