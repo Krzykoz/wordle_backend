@@ -11,6 +11,8 @@ import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Log4j2
 public class WordService {
@@ -46,6 +48,11 @@ public class WordService {
                 });
     }
 
+    public Word findWordByWordAndLanguage(String word, String languageCode) {
+        Language language = languageService.getLanguageByCode(languageCode);
+        return wordRepository.findAllByWordAndLanguage(word, language).orElseThrow(RuntimeException::new);
+    }
+
     public WordDto getRandomWord(String languageCode) {
         Word word = wordRepository.getRandomWord(languageCode)
                 .orElseThrow(() -> {
@@ -56,5 +63,8 @@ public class WordService {
         return new WordDto(word.getWord());
     }
 
+    public List<Word> getAll() {
+        return wordRepository.findAll();
+    }
 
 }

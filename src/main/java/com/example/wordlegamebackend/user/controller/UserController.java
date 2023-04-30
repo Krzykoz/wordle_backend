@@ -1,12 +1,11 @@
 package com.example.wordlegamebackend.user.controller;
 
 import com.example.wordlegamebackend.user.model.dto.UserDto;
+import com.example.wordlegamebackend.user.model.request.RegisterRequest;
+import com.example.wordlegamebackend.user.model.response.RegisterResponse;
 import com.example.wordlegamebackend.user.service.UserService;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/users")
@@ -16,6 +15,11 @@ public class UserController {
 
     public UserController(final UserService userService) {
         this.userService = userService;
+    }
+
+    @PostMapping
+    public RegisterResponse addUser(@RequestBody RegisterRequest request) {
+        return userService.signUpNewUser(request);
     }
 
     @GetMapping("{id}")

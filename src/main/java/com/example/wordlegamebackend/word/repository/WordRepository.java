@@ -12,7 +12,8 @@ import java.util.Optional;
 public interface WordRepository extends JpaRepository<Word, Long> {
 
     Optional<Word> findAllByWordAndLanguage(String word, Language language);
-    @Query("SELECT w FROM Word w WHERE w.language.languageCode = ?1 ORDER BY random()")
+
+    @Query("SELECT w FROM Word w WHERE w.language.languageCode = ?1 ORDER BY random() LIMIT 1")
     Optional<Word> getRandomWord(String languageCode);
 
 }
