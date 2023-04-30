@@ -1,17 +1,16 @@
 package com.example.wordlegamebackend.game.model;
 
+import com.example.wordlegamebackend.user.model.entity.User;
 import com.example.wordlegamebackend.word.model.entity.Word;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -25,6 +24,7 @@ public class Game {
     @JoinColumn(name = "word_id")
     private Word word;
 
-    //TODO make it as user object not int
-    private int user;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

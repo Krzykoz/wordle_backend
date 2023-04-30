@@ -17,3 +17,7 @@ spring:
       hibernate:
         format_sql: true
     database: h2
+
+config:
+  jwt:
+    secret-key: 6B5970337336763979244226452948404D635166546A576D5A7134743777217A
