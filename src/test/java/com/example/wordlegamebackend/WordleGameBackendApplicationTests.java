@@ -9,9 +9,7 @@ import org.springframework.test.context.ActiveProfiles;
 @AutoConfigureTestDatabase
 @ActiveProfiles(profiles = "dev")
 class WordleGameBackendApplicationTests {
-
     @Test
     void contextLoads() {
     }
-
 }
