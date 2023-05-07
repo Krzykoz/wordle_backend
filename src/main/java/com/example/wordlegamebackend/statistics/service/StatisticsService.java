@@ -18,13 +18,10 @@ import java.util.List;
 
 @Service
 public class StatisticsService {
-
-    private final WordRepository wordRepository;
     private final GameRepository gameRepository;
     private final WordService wordService;
 
-    public StatisticsService(final WordRepository wordRepository, final GameRepository gameRepository, final WordService wordService) {
-        this.wordRepository = wordRepository;
+    public StatisticsService(final GameRepository gameRepository, final WordService wordService) {
         this.gameRepository = gameRepository;
         this.wordService = wordService;
     }
