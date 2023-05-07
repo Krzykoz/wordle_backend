@@ -47,6 +47,7 @@ public class SpringSecurityConfiguration {
                 .and()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .csrf().disable()
+                .cors().disable()
                 .headers().frameOptions().disable();
 
         return http.build();
