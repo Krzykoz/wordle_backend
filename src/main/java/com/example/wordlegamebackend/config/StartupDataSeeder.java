@@ -21,10 +21,15 @@ public class StartupDataSeeder implements CommandLineRunner {
     public void run(final String... args) throws Exception {
         AddLanguageRequest addLanguageRequest = new AddLanguageRequest("Polski", "PL");
         languageService.addNewLanguage(addLanguageRequest);
-
         AddWordRequest addWordRequest = new AddWordRequest("wyraz", "PL");
         AddWordRequest addWordRequest2 = new AddWordRequest("nudny", "PL");
+        AddWordRequest addWordRequest3 = new AddWordRequest("polsl", "PL");
+        AddWordRequest addWordRequest4 = new AddWordRequest("testy", "PL");
+        AddWordRequest addWordRequest5 = new AddWordRequest("system", "PL");
         wordService.addNewWord(addWordRequest);
         wordService.addNewWord(addWordRequest2);
+        wordService.addNewWord(addWordRequest3);
+        wordService.addNewWord(addWordRequest4);
+        wordService.addNewWord(addWordRequest5);
     }
 }
