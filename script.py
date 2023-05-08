@@ -44,6 +44,7 @@ def connect(lines):
 
 # Read the words from a text file and call the connect function to insert them into the database
 with open("words.txt") as f:
-    lines = f.readlines()
+    lines = f.read().splitlines()
 f.close()
 connect(lines)
+print('Added')

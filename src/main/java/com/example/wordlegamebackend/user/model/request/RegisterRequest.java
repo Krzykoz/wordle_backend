@@ -1,3 +1,8 @@
+/**
+    A record representing the user registration request with email, first name and last name fields.
+    Uses Jakarta Validation API annotations to ensure valid input for email and non-blank values for first and last name.
+*/
+
 package com.example.wordlegamebackend.user.model.request;
 
 import jakarta.validation.constraints.Email;

@@ -11,7 +11,18 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The BaseExceptionHandler abstract class provides methods for handling common exception types
+ * in a standardized manner.
+ */
 public abstract class BaseExceptionHandler {
+
+    /**
+     * Handle Forbidden Exceptions and return a ResponseEntity with a standardized error message.
+     * @param ex the runtime exception to handle
+     * @param request the web request being handled
+     * @return a ResponseEntity containing the error message and HTTP status code
+     */
     public ResponseEntity<Object> handleForbiddenExceptions(RuntimeException ex, WebRequest request) {
         String requestUri = ((ServletWebRequest) request).getRequest().getRequestURI();
         ErrorResponse exceptionMessage = ErrorResponse.builder()
@@ -22,6 +33,12 @@ public abstract class BaseExceptionHandler {
         return new ResponseEntity<>(exceptionMessage, HttpStatus.FORBIDDEN);
     }
 
+    /**
+     * Handle Not Found Exceptions and return a ResponseEntity with a standardized error message.
+     * @param ex the runtime exception to handle
+     * @param request the web request being handled
+     * @return a ResponseEntity containing the error message and HTTP status code
+     */
     public ResponseEntity<Object> handleNotFoundExceptions(RuntimeException ex, WebRequest request) {
         String requestUri = ((ServletWebRequest) request).getRequest().getRequestURI();
         ErrorResponse exceptionMessage = ErrorResponse.builder()
@@ -32,6 +49,12 @@ public abstract class BaseExceptionHandler {
         return new ResponseEntity<>(exceptionMessage, HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * Handle Validation Exceptions and return a ResponseEntity with a standardized error message.
+     * @param ex the MethodArgumentNotValidException to handle
+     * @param request the web request being handled
+     * @return a ResponseEntity containing the error message and HTTP status code
+     */
     public ResponseEntity<Object> handleValidationExceptions(
             MethodArgumentNotValidException ex, WebRequest request) {
         String requestUri = ((ServletWebRequest) request).getRequest().getRequestURI();

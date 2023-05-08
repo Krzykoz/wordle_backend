@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Service class for generating game statistics.
+ */
 @Service
 public class StatisticsService {
     private final GameRepository gameRepository;
@@ -26,6 +29,14 @@ public class StatisticsService {
         this.wordService = wordService;
     }
 
+    /**
+     * Generates statistics for a given word in a given language and an optional user.
+     *
+     * @param authentication the authentication of the user. If null, only the word statistics are returned.
+     * @param word the word for which statistics are to be generated.
+     * @param languageCode the language code of the word.
+     * @return statistics for the word and optionally, for the user as well.
+     */
     public Statistics getStatistics(Authentication authentication, String word, String languageCode) {
         WordStatistics wordStatistics = getWordStatistics(word, languageCode);
         if (authentication == null) {
@@ -39,6 +50,12 @@ public class StatisticsService {
                 .wordStatistics(wordStatistics).build();
     }
 
+    /**
+     * Generates statistics for a given user.
+     *
+     * @param authentication the authentication of the user.
+     * @return statistics for the user.
+     */
     private UserStatistics getUserStatistics(Authentication authentication) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         User user = userDetails.user();
@@ -58,6 +75,13 @@ public class StatisticsService {
         return new UserStatistics(numberOfGuessedWords, winsRatio);
     }
 
+    /**
+     * Generates statistics for a given word.
+     *
+     * @param word the word for which statistics are to be generated.
+     * @param languageCode the language code of the word.
+     * @return statistics for the word.
+     */
     private WordStatistics getWordStatistics(String word, String languageCode) {
         Word guessingWord = wordService.findWordByWordAndLanguage(word, languageCode);
 

@@ -1,3 +1,7 @@
+/**
+    This class represents the statistics model for the WordLegameBackend.
+*/
+
 package com.example.wordlegamebackend.statistics.model;
 
 import lombok.Builder;
