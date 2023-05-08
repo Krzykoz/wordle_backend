@@ -2,7 +2,6 @@ import psycopg2
 from configparser import ConfigParser
 
 def connect(lines):
-    """ Connects to the PostgreSQL database server and inserts words from a text file into a table """
 
     # Establish connection to the PostgreSQL database server
     conn = psycopg2.connect(
@@ -23,7 +22,6 @@ def connect(lines):
         select_query = "SELECT id FROM Words WHERE id=(SELECT max(id) FROM Words)"
         cur.execute(select_query)
         temp = cur.fetchall()[0][0]
-        print(temp)
 
         # Loop through each line in the input text file and insert a new row into the Words table for each word
         for word in lines:
@@ -47,4 +45,4 @@ with open("words.txt") as f:
     lines = f.read().splitlines()
 f.close()
 connect(lines)
-print('Added')
+print('Added ',len(lines),' words to database')
