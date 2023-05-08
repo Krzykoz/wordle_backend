@@ -25,11 +25,9 @@ public class StartupDataSeeder implements CommandLineRunner {
         AddWordRequest addWordRequest2 = new AddWordRequest("nudny", "PL");
         AddWordRequest addWordRequest3 = new AddWordRequest("polsl", "PL");
         AddWordRequest addWordRequest4 = new AddWordRequest("testy", "PL");
-        AddWordRequest addWordRequest5 = new AddWordRequest("system", "PL");
         wordService.addNewWord(addWordRequest);
         wordService.addNewWord(addWordRequest2);
         wordService.addNewWord(addWordRequest3);
         wordService.addNewWord(addWordRequest4);
-        wordService.addNewWord(addWordRequest5);
     }
 }
