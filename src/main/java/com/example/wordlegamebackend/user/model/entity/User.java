@@ -1,3 +1,7 @@
+/**
+ *  Represents a user entity with an id, email, first name, and last name.
+*/
+
 package com.example.wordlegamebackend.user.model.entity;
 
 import jakarta.persistence.*;
@@ -22,6 +26,12 @@ public class User {
     @NonNull
     private String lastName;
 
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     *
+     * @param o the reference object with which to compare
+     * @return true if this object is the same as the obj argument; false otherwise
+     */
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
@@ -35,6 +45,11 @@ public class User {
         return lastName.equals(user.lastName);
     }
 
+    /**
+     * Returns a hash code value for the object.
+     *
+     * @return a hash code value for this object
+     */
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
