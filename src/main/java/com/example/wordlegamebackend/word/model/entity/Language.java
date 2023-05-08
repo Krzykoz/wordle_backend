@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+/**
+  * Entity class representing a language. It is used to store and retrieve languages in the database.
+  */
 @Entity
 @Table(name = "langugages")
 @Getter

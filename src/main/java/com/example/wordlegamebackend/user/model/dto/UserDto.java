@@ -1,3 +1,7 @@
+/**
+ *  Data transfer object for User entity.
+*/
+
 package com.example.wordlegamebackend.user.model.dto;
 
 import lombok.AllArgsConstructor;
