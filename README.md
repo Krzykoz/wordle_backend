@@ -1,12 +1,15 @@
 # Wordle Game Backend
 
-Jest to REST API, które ma za zadanie dostarczać informacji do warstwy graficznej aplikacji.
+Jest to warstwa serwerowa o architekturze REST API, która ma za zadanie dostarczać informacji do warstwy graficznej
+aplikacji. Aplikacja pozwala na dodanie słów oraz języków do bazy. Aplikacja również umożliwia rejestrację użytkowników
+oraz autentykaje na podstawie tokenów JWT. Po zagraniu gry przez użytkownika dodawana jest gra do bazy. Na podstawie
+gier oraz słów zapisanych w bazie dostarczane są statystyki.
 
 ## Technologie
 
 - Java 17
 - Spring Boot
-- Postgreql
+- Postgresql
 - Docker
 
 ### Uruchomienie
